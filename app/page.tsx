@@ -1,37 +1,71 @@
-import Welcome from "@/components/Welcome";
-
-const Section = ({ id, title }: { id: string; title: string }) => (
-  <section
-    id={id}
-    className="min-h-[70vh] flex items-center justify-center px-6 py-24 bg-white"
-  >
-    <div className="max-w-3xl w-full">
-      <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-4 text-neutral-900">
-        {title}
-      </h2>
-      <p className="text-neutral-600 leading-relaxed text-sm md:text-base">
-        Conteúdo placeholder para a seção <strong>{title}</strong>. Substitua por
-        informações reais do projeto. Esta área foi criada para permitir a
-        navegação suave pelos links do header. Cada seção tem um scroll-margin
-        ajustado para não ficar escondida atrás do cabeçalho fixo.
-      </p>
-    </div>
-  </section>
-);
+// app/page.tsx
+import CHeader from '@/components/CHeader'
+import Welcome from '@/components/Welcome'
+import Location from '@/components/Location'
 
 export default function Page() {
   return (
-    <main className="w-full flex flex-col">
+    <main className="font-sans text-triu-dark">
       <Welcome />
-      <Section id="localizacao" title="Localização" />
-      <Section id="areas-comuns" title="Áreas Comuns" />
-      <Section id="apartamento" title="Apartamento" />
-      <Section id="diferenciais" title="Diferenciais" />
-      <Section id="ficha-tecnica" title="Ficha Técnica" />
-      <Section id="video" title="Assista ao Vídeo" />
-      <Section id="contato" title="Contato" />
-      <footer className="py-12 text-center text-xs text-neutral-500">© {new Date().getFullYear()} Projeto TRIU 1722</footer>
+      <Location />
+
+      {/* Demais seções (placeholders prontos para receber conteúdo) */}
+      <section id="areas-comuns" className="scroll-mt-24">
+        <SectionShell title="Áreas Comuns" bg="default" />
+      </section>
+
+      <section id="apartamento" className="scroll-mt-24 bg-gray-50">
+        <SectionShell title="Apartamento" bg="muted" />
+      </section>
+
+      <section id="diferenciais" className="scroll-mt-24">
+        <SectionShell title="Diferenciais" bg="default" />
+      </section>
+
+      <section id="ficha-tecnica" className="scroll-mt-24 bg-gray-50">
+        <SectionShell title="Ficha Técnica" bg="muted" />
+      </section>
+
+      <section id="video" className="scroll-mt-24">
+        <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
+          <h2 className="mb-6 text-2xl font-semibold tracking-tight">Assista ao Vídeo</h2>
+          <div className="aspect-video w-full overflow-hidden rounded-xl bg-gray-200">
+            {/* substitua pelo seu player/iframe */}
+          </div>
+        </div>
+      </section>
+
+      <section id="contato" className="scroll-mt-24 bg-gray-900 text-white">
+        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+          <h2 className="mb-6 text-2xl font-semibold tracking-tight">Fale com um consultor</h2>
+          <p className="max-w-2xl opacity-90">
+            Coloque aqui seu formulário de contato ou link para WhatsApp.
+          </p>
+        </div>
+      </section>
     </main>
-  );
+  )
 }
 
+/** Shell simples para manter padding/estrutura enquanto você trabalha o conteúdo real */
+function SectionShell({
+  title,
+  bg = 'default',
+}: {
+  title: string
+  bg?: 'default' | 'muted'
+}) {
+  return (
+    <div
+      className={[
+        'mx-auto max-w-7xl px-4 py-20 sm:px-6',
+        bg === 'muted' ? '' : '',
+      ].join(' ')}
+    >
+      <h2 className="mb-6 text-2xl font-semibold tracking-tight">{title}</h2>
+      <p className="max-w-2xl text-base text-gray-600">
+        Conteúdo da seção “{title}”. Substitua pelo conteúdo real do seu protótipo.
+      </p>
+    </div>
+  )
+}

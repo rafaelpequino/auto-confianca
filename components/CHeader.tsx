@@ -49,16 +49,14 @@ export const CHeader = () => {
         <div className="flex items-center gap-4">
           <a href="#projeto" className="flex items-center" aria-label="Início">
             <Image
-              src="/img/logo-triu-white.png"
+              src={scrolled ? "/img/logo-triu.png" : "/img/logo-triu-white.png"}
               alt="TRIU 1722"
               width={140}
               height={40}
-              className={clsx(
-                "transition-all object-contain h-auto w-auto max-h-12",
-                scrolled && "brightness-0 invert" // invert white logo on white bg
-              )}
+              className="transition-all object-contain h-auto w-auto max-h-12"
               priority
             />
+
           </a>
         </div>
         {/* Desktop Nav */}
@@ -87,22 +85,22 @@ export const CHeader = () => {
         >
           <span
             className={clsx(
-              "h-0.5 w-6 bg-current transition-all", 
-              scrolled ? "text-neutral-900" : "text-white", 
+              "h-0.5 w-6 bg-current transition-all",
+              scrolled ? "text-neutral-900" : "text-white",
               open && "translate-y-[7px] rotate-45"
             )}
           />
           <span
             className={clsx(
-              "h-0.5 w-6 bg-current transition-opacity", 
-              scrolled ? "text-neutral-900" : "text-white", 
+              "h-0.5 w-6 bg-current transition-opacity",
+              scrolled ? "text-neutral-900" : "text-white",
               open && "opacity-0"
             )}
           />
           <span
             className={clsx(
-              "h-0.5 w-6 bg-current transition-all", 
-              scrolled ? "text-neutral-900" : "text-white", 
+              "h-0.5 w-6 bg-current transition-all",
+              scrolled ? "text-neutral-900" : "text-white",
               open && "-translate-y-[7px] -rotate-45"
             )}
           />
@@ -111,8 +109,8 @@ export const CHeader = () => {
       {/* Mobile Drawer */}
       <div
         className={clsx(
-          "lg:hidden origin-top transition-transform duration-300 px-4 pb-8", 
-          open ? "scale-y-100" : "scale-y-0", 
+          "lg:hidden origin-top transition-transform duration-300 px-4 pb-8",
+          open ? "scale-y-100" : "scale-y-0",
           scrolled ? "bg-white/95 backdrop-blur" : "bg-neutral-900/95 backdrop-blur"
         )}
       >
@@ -123,7 +121,7 @@ export const CHeader = () => {
               href={item.href}
               onClick={(e) => handleNavClick(e, item.href)}
               className={clsx(
-                "uppercase tracking-wide", 
+                "uppercase tracking-wide",
                 scrolled ? "text-neutral-900" : "text-white"
               )}
             >
