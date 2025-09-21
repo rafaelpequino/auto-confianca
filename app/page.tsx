@@ -3,6 +3,7 @@ import Welcome from '@/components/Welcome'
 import Project from '@/components/Project'
 import Location from '@/components/Location'
 import CommonAreas from '@/components/CommonAreas'
+import Apartments from '@/components/Apartments'
 
 export default function Page() {
   return (
@@ -11,6 +12,7 @@ export default function Page() {
       <Project />
       <Location />
       <CommonAreas />
+      <Apartments />
 
       <section id="video" className="scroll-mt-24">
         <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
