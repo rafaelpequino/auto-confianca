@@ -1,4 +1,5 @@
 'use client'
+import { useEffect, useState, useCallback } from 'react'
 import Image from 'next/image'
 
 type Amenity = { n: number; label: string }
@@ -21,7 +22,7 @@ const AMENITIES_1: Amenity[] = [
     { n: 10, label: 'Pet place' },
 ]
 
-// TODO: substitua os labels abaixo pelos itens exatamente como estão na segunda planta
+// TODO: substitua pelos itens exatamente como estão na segunda planta
 const AMENITIES_2: Amenity[] = [
     { n: 1, label: 'Solarium' },
     { n: 2, label: 'Piscina Climatizada' },
@@ -29,7 +30,7 @@ const AMENITIES_2: Amenity[] = [
     { n: 4, label: 'Fitness Rooftop' },
     { n: 5, label: 'Espaço Wellness' },
     { n: 6, label: 'Sala de Massagem' },
-    { n: 7, label: 'Hidromassagem' }
+    { n: 7, label: 'Hidromassagem' },
 ]
 
 const PLANS: Plan[] = [
@@ -46,6 +47,30 @@ const PLANS: Plan[] = [
 ]
 
 export default function CommonAreas() {
+    const [selectedImage, setSelectedImage] = useState<string | null>(null)
+
+    const closeModal = useCallback(() => setSelectedImage(null), [])
+
+    // trava o scroll do body quando o modal estiver aberto
+    useEffect(() => {
+        if (!selectedImage) return
+        const original = document.body.style.overflow
+        document.body.style.overflow = 'hidden'
+        return () => {
+            document.body.style.overflow = original
+        }
+    }, [selectedImage])
+
+    // fecha com ESC
+    useEffect(() => {
+        if (!selectedImage) return
+        const onKey = (e: KeyboardEvent) => {
+            if (e.key === 'Escape') closeModal()
+        }
+        window.addEventListener('keydown', onKey)
+        return () => window.removeEventListener('keydown', onKey)
+    }, [selectedImage, closeModal])
+
     return (
         <section id="common-areas" className="relative bg-[#EEEEE1]">
             {/* selo no topo/esquerda */}
@@ -74,9 +99,14 @@ export default function CommonAreas() {
                                 className={`grid grid-cols-1 gap-8 md:grid-cols-5 items-start md:items-center ${reversed ? 'md:[&>*:first-child]:order-2 md:[&>*:last-child]:order-1' : ''
                                     }`}
                             >
-                                {/* imagem */}
+                                {/* imagem com trigger do modal */}
                                 <div className="md:col-span-3">
-                                    <div className="relative w-full overflow-hidden rounded-none border border-gray-200">
+                                    <button
+                                        type="button"
+                                        onClick={() => setSelectedImage(plan.imageSrc)}
+                                        className="group relative block w-full cursor-zoom-in overflow-hidden rounded-none border border-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-900/30"
+                                        aria-label="Ampliar planta das áreas comuns"
+                                    >
                                         <Image
                                             src={plan.imageSrc}
                                             alt={plan.imageAlt}
@@ -84,9 +114,10 @@ export default function CommonAreas() {
                                             height={1100}
                                             priority={i === 0}
                                             sizes="(min-width: 768px) 60vw, 100vw"
-                                            className="h-auto w-full object-cover"
+                                            className="h-auto w-full object-cover transition-transform group-hover:scale-105"
                                         />
-                                    </div>
+                                    </button>
+                                    <p className="mt-2 text-center text-xs text-gray-600">Clique para ampliar</p>
                                 </div>
 
                                 {/* lista numerada */}
@@ -109,6 +140,38 @@ export default function CommonAreas() {
                     })}
                 </div>
             </div>
+
+            {/* Modal de zoom */}
+            {selectedImage && (
+                <div
+                    className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4"
+                    role="dialog"
+                    aria-modal="true"
+                    onClick={closeModal} // fecha clicando no overlay
+                >
+                    {/* impede fechar ao clicar na imagem/conteúdo */}
+                    <div
+                        className="relative w-full max-w-6xl"
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        <Image
+                            src={selectedImage}
+                            alt="Planta ampliada"
+                            width={2200}
+                            height={1500}
+                            className="h-auto w-full rounded shadow-lg"
+                        />
+                        <button
+                            type="button"
+                            onClick={closeModal}
+                            className="absolute right-4 top-4 rounded-full bg-white/95 px-3 py-1 text-sm font-bold text-gray-900 shadow hover:bg-white"
+                            aria-label="Fechar modal"
+                        >
+                            X
+                        </button>
+                    </div>
+                </div>
+            )}
         </section>
     )
 }
