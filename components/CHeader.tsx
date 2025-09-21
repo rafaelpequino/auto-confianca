@@ -25,12 +25,21 @@ export const CHeader = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // fecha o menu se a tela ficar grande
+  useEffect(() => {
+    const onResize = () => {
+      if (window.innerWidth >= 1024) setOpen(false);
+    };
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
+
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     if (href.startsWith("#")) {
       e.preventDefault();
       const el = document.querySelector(href);
       if (el) {
-        const headerHeight = 80; // approximate fixed header height
+        const headerHeight = 80;
         const top = (el as HTMLElement).getBoundingClientRect().top + window.scrollY - headerHeight + 4;
         window.scrollTo({ top, behavior: "smooth" });
         setOpen(false);
@@ -47,7 +56,7 @@ export const CHeader = () => {
     >
       <div className="max-w-[1440px] mx-auto flex items-center justify-between px-4 md:px-8 h-20">
         <div className="flex items-center gap-4">
-          <a href="#projeto" className="flex items-center" aria-label="Início">
+          <a href="#project" className="flex items-center" aria-label="Início">
             <Image
               src={scrolled ? "/img/logo-triu.png" : "/img/logo-triu-white.png"}
               alt="TRIU 1722"
@@ -56,9 +65,9 @@ export const CHeader = () => {
               className="transition-all object-contain h-auto w-auto max-h-12"
               priority
             />
-
           </a>
         </div>
+
         {/* Desktop Nav */}
         <nav className="hidden lg:flex gap-8 text-[11px] tracking-[0.12em] font-medium">
           {navItems.map((item) => (
@@ -79,38 +88,41 @@ export const CHeader = () => {
 
         {/* Mobile menu button */}
         <button
-          className="lg:hidden inline-flex flex-col gap-1.5 group"
+          className="lg:hidden relative w-6 h-6"
           onClick={() => setOpen((o) => !o)}
           aria-label="Menu"
         >
           <span
             className={clsx(
-              "h-0.5 w-6 bg-current transition-all",
+              "absolute left-0 top-1/2 h-0.5 w-6 bg-current transition-all origin-center",
               scrolled ? "text-neutral-900" : "text-white",
-              open && "translate-y-[7px] rotate-45"
+              open && "rotate-45"
             )}
           />
           <span
             className={clsx(
-              "h-0.5 w-6 bg-current transition-opacity",
+              "absolute left-0 top-1/2 h-0.5 w-6 bg-current transition-all origin-center",
               scrolled ? "text-neutral-900" : "text-white",
-              open && "opacity-0"
+              open ? "-rotate-45" : "translate-y-2"
             )}
           />
-          <span
-            className={clsx(
-              "h-0.5 w-6 bg-current transition-all",
-              scrolled ? "text-neutral-900" : "text-white",
-              open && "-translate-y-[7px] -rotate-45"
-            )}
-          />
+          {!open && (
+            <span
+              className={clsx(
+                "absolute left-0 top-1/2 h-0.5 w-6 bg-current transition-all origin-center",
+                scrolled ? "text-neutral-900" : "text-white",
+                "-translate-y-2"
+              )}
+            />
+          )}
         </button>
       </div>
+
       {/* Mobile Drawer */}
       <div
         className={clsx(
-          "lg:hidden origin-top transition-transform duration-300 px-4 pb-8",
-          open ? "scale-y-100" : "scale-y-0",
+          "lg:hidden overflow-hidden transition-all duration-300",
+          open ? "max-h-[500px] opacity-100 px-4 pb-8" : "max-h-0 opacity-0 px-4 pb-0",
           scrolled ? "bg-white/95 backdrop-blur" : "bg-neutral-900/95 backdrop-blur"
         )}
       >
