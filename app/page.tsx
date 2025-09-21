@@ -1,30 +1,16 @@
 // app/page.tsx
-import CHeader from '@/components/CHeader'
 import Welcome from '@/components/Welcome'
+import Project from '@/components/Project'
 import Location from '@/components/Location'
+import CommonAreas from '@/components/CommonAreas'
 
 export default function Page() {
   return (
     <main className="font-sans text-triu-dark">
       <Welcome />
+      <Project />
       <Location />
-
-      {/* Demais seções (placeholders prontos para receber conteúdo) */}
-      <section id="areas-comuns" className="scroll-mt-24">
-        <SectionShell title="Áreas Comuns" bg="default" />
-      </section>
-
-      <section id="apartamento" className="scroll-mt-24 bg-gray-50">
-        <SectionShell title="Apartamento" bg="muted" />
-      </section>
-
-      <section id="diferenciais" className="scroll-mt-24">
-        <SectionShell title="Diferenciais" bg="default" />
-      </section>
-
-      <section id="ficha-tecnica" className="scroll-mt-24 bg-gray-50">
-        <SectionShell title="Ficha Técnica" bg="muted" />
-      </section>
+      <CommonAreas />
 
       <section id="video" className="scroll-mt-24">
         <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6">

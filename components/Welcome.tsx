@@ -4,7 +4,7 @@ import Link from "next/link";
 export const Welcome = () => {
   return (
     <section
-      id="projeto"
+      id="welcome"
       className="relative min-h-screen w-full flex items-end overflow-hidden" 
     >
       <div

@@ -6,13 +6,13 @@ import clsx from "clsx";
 type NavItem = { label: string; href: string };
 
 const navItems: NavItem[] = [
-  { label: "PROJETO", href: "#projeto" },
-  { label: "LOCALIZAÇÃO", href: "#localizacao" },
-  { label: "ÁREAS COMUNS", href: "#areas-comuns" },
-  { label: "APARTAMENTO", href: "#apartamento" },
-  { label: "DIFERENCIAIS", href: "#diferenciais" },
-  { label: "FICHA TÉCNICA", href: "#ficha-tecnica" },
-  { label: "ASSISTA AO VÍDEO", href: "#video" },
+  { label: "PROJETO", href: "#project" },
+  { label: "LOCALIZAÇÃO", href: "#location" },
+  { label: "ÁREAS COMUNS", href: "#common-areas" },
+  { label: "APARTAMENTO", href: "#" },
+  { label: "DIFERENCIAIS", href: "#" },
+  { label: "FICHA TÉCNICA", href: "#" },
+  { label: "ASSISTA AO VÍDEO", href: "#" },
 ];
 
 export const CHeader = () => {
