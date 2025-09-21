@@ -5,6 +5,7 @@ import Location from '@/components/Location'
 import CommonAreas from '@/components/CommonAreas'
 import Apartments from '@/components/Apartments'
 import Differences from '@/components/Differences'
+import Video from '@/components/Video'
 
 export default function Page() {
   return (
@@ -15,24 +16,7 @@ export default function Page() {
       <CommonAreas />
       <Apartments />
       <Differences />
-
-      <section id="video" className="scroll-mt-24">
-        <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
-          <h2 className="mb-6 text-2xl font-semibold tracking-tight">Assista ao Vídeo</h2>
-          <div className="aspect-video w-full overflow-hidden rounded-xl bg-gray-200">
-            {/* substitua pelo seu player/iframe */}
-          </div>
-        </div>
-      </section>
-
-      <section id="contato" className="scroll-mt-24 bg-gray-900 text-white">
-        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
-          <h2 className="mb-6 text-2xl font-semibold tracking-tight">Fale com um consultor</h2>
-          <p className="max-w-2xl opacity-90">
-            Coloque aqui seu formulário de contato ou link para WhatsApp.
-          </p>
-        </div>
-      </section>
+      <Video />
     </main>
   )
 }

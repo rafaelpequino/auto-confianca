@@ -11,7 +11,7 @@ const navItems: NavItem[] = [
   { label: "ÁREAS COMUNS", href: "#common-areas" },
   { label: "APARTAMENTO", href: "#apartments" },
   { label: "DIFERENCIAIS", href: "#differences" },
-  { label: "ASSISTA AO VÍDEO", href: "#" },
+  { label: "ASSISTA AO VÍDEO", href: "#video" },
 ];
 
 export const CHeader = () => {
