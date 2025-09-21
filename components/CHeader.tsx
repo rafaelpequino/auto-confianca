@@ -9,8 +9,8 @@ const navItems: NavItem[] = [
   { label: "PROJETO", href: "#project" },
   { label: "LOCALIZAÇÃO", href: "#location" },
   { label: "ÁREAS COMUNS", href: "#common-areas" },
-  { label: "APARTAMENTO", href: "#" },
-  { label: "DIFERENCIAIS", href: "#" },
+  { label: "APARTAMENTO", href: "#apartments" },
+  { label: "DIFERENCIAIS", href: "#differences" },
   { label: "FICHA TÉCNICA", href: "#" },
   { label: "ASSISTA AO VÍDEO", href: "#" },
 ];
