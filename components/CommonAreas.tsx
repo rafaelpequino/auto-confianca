@@ -47,7 +47,7 @@ const PLANS: Plan[] = [
 
 export default function CommonAreas() {
     return (
-        <section id="common-areas" className="relative bg-[#f4f4ea]">
+        <section id="common-areas" className="relative bg-[#EEEEE1]">
             {/* selo no topo/esquerda */}
             <div className="pointer-events-none absolute left-4 top-6 z-10 text-[10px] uppercase tracking-[.25em] text-gray-700 sm:left-6 sm:text-xs">
                 ÁREAS COMUNS
