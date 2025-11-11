@@ -76,14 +76,14 @@ export default function Location() {
 
         {/* VISITE NOSSO STAND */}
         <div className="mt-12 text-center">
-          <h3 className="text-base font-extrabold uppercase text-gray-900">Visite nosso stand</h3>
+          <h3 className="text-base font-extrabold uppercase text-gray-900">Utilize o Whatsapp (11) 94747-9403 para marcar o café e saborear essa oportunidade</h3>
           <p className="mt-1 text-xs text-gray-700 sm:text-sm">
             Rua Barão do Triunfo, 1722 – Campo Belo, São Paulo – SP, 04602-006
           </p>
           <p className="mx-auto mt-4 max-w-3xl text-sm text-gray-700 sm:text-base">
             Pensado para todas as ocasiões; para casais que buscam um <span className="font-semibold">lar</span>,
             perfeito para quem deseja <span className="font-semibold">investir</span> com segurança e sólido
-            como patrimônio para o <span className="font-semibold">futuro</span>
+            como patrimônio
           </p>
         </div>
 

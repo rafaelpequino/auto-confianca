@@ -28,7 +28,8 @@ export const Welcome = () => {
       </div>
       {/* Floating WhatsApp style button (mobile & desktop) */}
       <Link
-        href="#contato"
+        href="https://wa.me/5511947479403"
+        target="_blank"
         className="fixed bottom-4 right-4 z-20 inline-flex items-center gap-2 rounded-full bg-white text-neutral-900 text-xs md:text-sm font-medium px-4 py-3 shadow-lg hover:shadow-xl transition-shadow"
       >
         <span className="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse" />

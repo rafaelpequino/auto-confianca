@@ -18,11 +18,6 @@ type DiffItem = {
 
 const DIFFERENCES: DiffItem[] = [
     {
-        icon: Paintbrush,
-        title: 'Acabamentos personalizáveis',
-        desc: 'Escolha entre 3 kits de acabamento e deixe tudo com a sua cara.',
-    },
-    {
         icon: Utensils,
         title: 'Terraço gourmet com carvão',
         desc: 'Todos os apartamentos contam com churrasqueira a carvão integrada.',
@@ -39,7 +34,7 @@ const DIFFERENCES: DiffItem[] = [
     },
     {
         icon: ShoppingCart,
-        title: 'Mini-Market',
+        title: 'Minimercado',
         desc: 'Conveniência a poucos passos de casa para o dia a dia.',
     },
     {

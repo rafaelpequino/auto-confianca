@@ -49,7 +49,7 @@ export default function Location() {
                     {/* textos centralizados sobre a linha */}
                     <div className="absolute inset-0 flex flex-col items-center justify-center">
                         <p className="mb-2 text-[10px] uppercase tracking-[.25em] text-gray-700 sm:text-xs">
-                            Em uma das ruas mais famosas do Campo Belo
+                            Em um dos melhores endereços da cidade
                         </p>
                         <p className="text-sm font-semibold uppercase text-gray-900 sm:text-base">
                             Esquina da Rua Barão do Triunfo com a Demóstenes

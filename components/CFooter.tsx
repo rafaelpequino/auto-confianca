@@ -43,9 +43,9 @@ export default function CFooter() {
                             <Image
                                 src="/img/logo-triu-white.png"
                                 alt="TRIU 1722"
-                                width={160}
-                                height={44}
-                                className="h-auto w-auto"
+                                width={120}
+                                height={40}
+                                className="h-auto w-auto max-w-[120px]"
                                 priority={false}
                             />
                         </a>
@@ -123,8 +123,8 @@ export default function CFooter() {
                             </li>
                             <li className="flex items-start gap-3 text-white/90">
                                 <Mail className="mt-0.5 h-5 w-5 text-white/70" />
-                                <a href="mailto:contato@seudominio.com" className="hover:underline">
-                                    contato@seudominio.com
+                                <a href="mailto:lsho21@gmail.com" className="hover:underline">
+                                    lsho21@gmail.com
                                 </a>
                             </li>
                         </ul>
