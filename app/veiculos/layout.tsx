@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
-import CHeader from "@/components/CHeader";
-import CFooter from "@/components/CFooter";
+import "../globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,21 +13,19 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "TRIU 1722 - Auto Confiança",
-  description: "Desenvolvido por Rafael Pequino",
+  title: "Catálogo de Veículos - Auto Confiança",
+  description: "Encontre o veículo perfeito para você",
 };
 
-export default function RootLayout({
+export default function VeiculosLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white relative`}>        
-        <CHeader />
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}
-        <CFooter />
       </body>
     </html>
   );
