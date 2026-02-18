@@ -25,13 +25,14 @@ export function generateStaticParams() {
   }));
 }
 
-export default function VeiculoDetalhePage({
+export default async function VeiculoDetalhePage({
   params,
 }: {
-  params: { codVeiculo: string };
+  params: Promise<{ codVeiculo: string }>;
 }) {
+  const { codVeiculo } = await params;
   const veiculo = veiculosData.find(
-    (v) => v.codVeiculo === params.codVeiculo
+    (v) => v.codVeiculo === codVeiculo
   ) as Veiculo | undefined;
 
   if (!veiculo) {
