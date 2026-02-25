@@ -1,0 +1,243 @@
+[
+  {
+    "codImovel": "triu-1722",
+    "nome": "TRIU 1722",
+    "localizacao": "Rua Barão do Triunfo, 1722 – Campo Belo, São Paulo – SP, 04602-006",
+    "endereco": "Esquina da Rua Barão do Triunfo com a Demóstenes",
+    "telefone": "11947479403",
+    "descricaoCurta": "2 Suítes | 69 M² com Espaço Gourmet",
+    "descricaoCompleta": "Entre o charme da tradição e a energia da modernidade, o Triu 1722 se destaca como um ícone de exclusividade",
+    "fotosPrincipais": [
+      "/img/empreendimento/01.jpg",
+      "/img/empreendimento/02.jpg",
+      "/img/empreendimento/03.jpg",
+      "/img/empreendimento/05.jpg",
+      "/img/empreendimento/06.jpg"
+    ],
+    "apartamentos": [
+      {
+        "titulo": "2 suítes | 69 m²",
+        "subtitulo": "com terraço gourmet",
+        "imagemPlanta": "/img/empreendimento/planta01.jpg",
+        "detalhes": [
+          { "n": 1, "label": "2 suítes" },
+          { "n": 2, "label": "Lavabo" },
+          { "n": 3, "label": "Sala de estar e jantar integradas" },
+          { "n": 4, "label": "Cozinha integrada" },
+          { "n": 5, "label": "Terraço gourmet" }
+        ]
+      },
+      {
+        "titulo": "2 suítes | 69 m²",
+        "subtitulo": "com sala integrada e terraço gourmet",
+        "imagemPlanta": "/img/empreendimento/planta02.jpg",
+        "detalhes": [
+          { "n": 1, "label": "2 suítes" },
+          { "n": 2, "label": "Lavabo" },
+          { "n": 3, "label": "Sala integrada ao terraço gourmet" },
+          { "n": 4, "label": "Cozinha com ilha" },
+          { "n": 5, "label": "Ampla varanda social" }
+        ]
+      }
+    ],
+    "areasComuns": [
+      {
+        "imagemPlanta": "/img/empreendimento/05.jpg",
+        "detalhes": [
+          { "n": 1, "label": "Guarita blindada" },
+          { "n": 2, "label": "Espaço delivery" },
+          { "n": 3, "label": "Hall social" },
+          { "n": 4, "label": "Coworking" },
+          { "n": 5, "label": "Fitness térreo" },
+          { "n": 6, "label": "Espaço gourmet" },
+          { "n": 7, "label": "Brinquedoteca" },
+          { "n": 8, "label": "Bicicletário com oficina" },
+          { "n": 9, "label": "Mini-market" },
+          { "n": 10, "label": "Pet place" }
+        ]
+      },
+      {
+        "imagemPlanta": "/img/empreendimento/06.jpg",
+        "detalhes": [
+          { "n": 1, "label": "Solarium" },
+          { "n": 2, "label": "Piscina Climatizada" },
+          { "n": 3, "label": "Deck Molhado" },
+          { "n": 4, "label": "Fitness Rooftop" },
+          { "n": 5, "label": "Espaço Wellness" },
+          { "n": 6, "label": "Sala de Massagem" },
+          { "n": 7, "label": "Hidromassagem" }
+        ]
+      }
+    ],
+    "diferenciais": [
+      {
+        "titulo": "Terraço gourmet com carvão",
+        "descricao": "Todos os apartamentos contam com churrasqueira a carvão integrada."
+      },
+      {
+        "titulo": "Rooftop + Espaço Wellness",
+        "descricao": "Vista panorâmica para relaxar e recarregar as energias."
+      },
+      {
+        "titulo": "Espaço Delivery",
+        "descricao": "Receba encomendas com praticidade e segurança."
+      },
+      {
+        "titulo": "Minimercado",
+        "descricao": "Conveniência a poucos passos de casa para o dia a dia."
+      },
+      {
+        "titulo": "Ponto para carro elétrico",
+        "descricao": "Infra preparada para recarga de veículos elétricos."
+      },
+      {
+        "titulo": "Segurança inteligente",
+        "descricao": "Sistemas e controles integrados para sua tranquilidade."
+      },
+      {
+        "titulo": "Bicicletário com oficina",
+        "descricao": "Espaço dedicado com suporte para manutenção das bikes."
+      }
+    ],
+    "videoUrl": "https://www.youtube-nocookie.com/embed/G6cnz3cTQgU?autoplay=0&rel=0&modestbranding=1&playsinline=1",
+    "localidades": [
+      {
+        "titulo": "Shopping Ibirapuera",
+        "info": "Carro • 1,3km • 4min",
+        "img": "/img/locais/shopping.jpg"
+      },
+      {
+        "titulo": "Metrô Eucaliptos",
+        "info": "Carro • 2,7km • 7min",
+        "img": "/img/locais/eucaliptos.jpg"
+      },
+      {
+        "titulo": "Aeroporto de Congonhas",
+        "info": "A pé • 1km • 12min",
+        "img": "/img/locais/congonhas.jpg"
+      }
+    ]
+  },
+  {
+    "codImovel": "quaddra-lorena",
+    "nome": "QUADDRA LORENA",
+    "localizacao": "Alameda Lorena, 70 – Jardins, São Paulo – SP",
+    "endereco": "Alameda Lorena, 70 – O maior terreno do Jardins (5.414m²)",
+    "telefone": "11947479403",
+    "descricaoCurta": "4 Suítes | 300 a 387 m²",
+    "descricaoCompleta": "O novo ícone de luxo da Yuny nos Jardins. Por Aflalo & Gasperini, apenas 56 unidades exclusivas no maior terreno do Jardins (5.414m²), com o conceito High Wellness e início de obras em março de 2026.",
+    "fotosPrincipais": [
+      "/img/quaddra-lorena/hero.jpg",
+      "/img/quaddra-lorena/fachada.jpg",
+      "/img/quaddra-lorena/aerial.jpg",
+      "/img/quaddra-lorena/areas-01.jpg",
+      "/img/quaddra-lorena/areas-02.jpg"
+    ],
+    "apartamentos": [
+      {
+        "titulo": "4 suítes | 300 m²",
+        "subtitulo": "Torre Europa – Apartamento tipo com depósito e Private Space Office",
+        "imagemPlanta": "/img/quaddra-lorena/planta-300.jpg",
+        "detalhes": [
+          { "n": 1, "label": "4 Suítes" },
+          { "n": 2, "label": "Lavabo" },
+          { "n": 3, "label": "Sala de estar e jantar integradas" },
+          { "n": 4, "label": "Cozinha com ilha" },
+          { "n": 5, "label": "Private Space Office" },
+          { "n": 6, "label": "Depósito privativo" },
+          { "n": 7, "label": "4 vagas de garagem" }
+        ]
+      },
+      {
+        "titulo": "4 suítes | 387 m²",
+        "subtitulo": "Torres Jardins e Parque – Apartamento tipo com depósito e Private Space Office",
+        "imagemPlanta": "/img/quaddra-lorena/planta-387.jpg",
+        "detalhes": [
+          { "n": 1, "label": "4 Suítes" },
+          { "n": 2, "label": "Lavabo" },
+          { "n": 3, "label": "Sala de estar e jantar integradas" },
+          { "n": 4, "label": "Cozinha com ilha" },
+          { "n": 5, "label": "Private Space Office" },
+          { "n": 6, "label": "Depósito privativo" },
+          { "n": 7, "label": "4 vagas de garagem" }
+        ]
+      }
+    ],
+    "areasComuns": [
+      {
+        "imagemPlanta": "/img/quaddra-lorena/areas-01.jpg",
+        "detalhes": [
+          { "n": 1, "label": "Quadra de Tênis de Saibro Oficial" },
+          { "n": 2, "label": "Academia exclusiva Technogyn" },
+          { "n": 3, "label": "Spa com Sauna Seca e Úmida" },
+          { "n": 4, "label": "Crioterapia" },
+          { "n": 5, "label": "Beauty Space" },
+          { "n": 6, "label": "Piscina coberta com raia de 25m" },
+          { "n": 7, "label": "Piscina descoberta" }
+        ]
+      },
+      {
+        "imagemPlanta": "/img/quaddra-lorena/areas-02.jpg",
+        "detalhes": [
+          { "n": 1, "label": "Obras de arte com curadoria de Felipe Hegg" },
+          { "n": 2, "label": "Mobiliário autoral nas áreas comuns" },
+          { "n": 3, "label": "Jardins internos com irrigação automática" },
+          { "n": 4, "label": "Gerador full nas unidades privativas" },
+          { "n": 5, "label": "Sala de motoristas mobiliada e equipada" }
+        ]
+      }
+    ],
+    "diferenciais": [
+      {
+        "titulo": "High Wellness",
+        "descricao": "Conceito exclusivo de bem-estar com spa completo, crioterapia, academia Technogyn Premium e muito mais."
+      },
+      {
+        "titulo": "Quadra de Tênis de Saibro",
+        "descricao": "Quadra oficial de tênis de saibro no coração dos Jardins – um diferencial inédito."
+      },
+      {
+        "titulo": "Piscina Coberta com Raia de 25m",
+        "descricao": "Piscina coberta para natação e lazer o ano inteiro, com raia semiolímpica."
+      },
+      {
+        "titulo": "Private Space Office",
+        "descricao": "Todas as unidades incluem espaço privativo para home office com conforto e privacidade."
+      },
+      {
+        "titulo": "Gerador Full",
+        "descricao": "Gerador de energia completo em todas as unidades privativas para total segurança."
+      },
+      {
+        "titulo": "Carga para Elétricos",
+        "descricao": "Previsão de carregadores elétricos em todas as vagas de garagem do empreendimento."
+      },
+      {
+        "titulo": "Por Aflalo & Gasperini",
+        "descricao": "Projeto assinado pelo premiado escritório Aflalo & Gasperini Arquitetos."
+      },
+      {
+        "titulo": "Apenas 56 Unidades",
+        "descricao": "Exclusividade total: apenas 56 unidades no maior terreno do Jardins, com 5.414m²."
+      }
+    ],
+    "videoUrl": "https://www.youtube-nocookie.com/embed/1kTteb3LXKg?autoplay=0&rel=0&modestbranding=1&playsinline=1",
+    "localidades": [
+      {
+        "titulo": "Avenida Paulista",
+        "info": "A pé • 1,2km • 15min",
+        "img": "/img/quaddra-lorena/locais/paulista.jpg"
+      },
+      {
+        "titulo": "Parque Trianon",
+        "info": "A pé • 700m • 9min",
+        "img": "/img/quaddra-lorena/locais/trianon.jpg"
+      },
+      {
+        "titulo": "Metrô Consolação",
+        "info": "A pé • 900m • 11min",
+        "img": "/img/quaddra-lorena/locais/metro.jpg"
+      }
+    ]
+  }
+]

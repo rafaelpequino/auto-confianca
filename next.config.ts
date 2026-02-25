@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,           // necessário se você usa <Image /> no export
   },
-  // trailingSlash: true,        // opcional, útil em hospedagens tipo Hostinger
+  trailingSlash: true,           // gera index.html dentro de pastas para cada rota
   // basePath: "/subpasta",      // se o site não estiver na raiz do domínio
 };
 
