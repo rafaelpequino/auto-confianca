@@ -202,7 +202,9 @@ export default function ImovelDetalheClient({ imovel }: { imovel: Imovel }) {
 
         <div className="mx-auto max-w-6xl px-4 pb-20 pt-16 sm:px-6 lg:px-8">
           <h2 className="mb-3 text-center text-lg font-extrabold uppercase text-gray-900 sm:text-xl">
-            A união da arquitetura com a comodidade
+            {imovel.codImovel === 'quaddra-lorena'
+              ? 'Um endereço elegante, que transforma suas tarefas diárias em um passeio único.'
+              : 'A união da arquitetura com a comodidade'}
           </h2>
           <p className="mx-auto mb-8 max-w-3xl text-center text-sm text-gray-700 sm:text-base">
             Um bairro <span className="font-semibold">completo</span> com
@@ -226,8 +228,7 @@ export default function ImovelDetalheClient({ imovel }: { imovel: Imovel }) {
 
           <div className="mt-12 text-center">
             <h3 className="text-base font-extrabold uppercase text-gray-900">
-              Utilize o Whatsapp (11) 94747-9403 para marcar o café e saborear
-              essa oportunidade
+            Pensado para proporcionar a você e sua família, o luxo de viver o melhor.
             </h3>
             <p className="mt-1 text-xs text-gray-700 sm:text-sm">
               {imovel.localizacao}

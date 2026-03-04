@@ -76,7 +76,7 @@ export default function Location() {
 
         {/* VISITE NOSSO STAND */}
         <div className="mt-12 text-center">
-          <h3 className="text-base font-extrabold uppercase text-gray-900">Utilize o Whatsapp (11) 94747-9403 para marcar o café e saborear essa oportunidade</h3>
+          <h3 className="text-base font-extrabold uppercase text-gray-900">Pensado para proporcionar a você e sua família, o luxo de viver o melhor.</h3>
           <p className="mt-1 text-xs text-gray-700 sm:text-sm">
             Rua Barão do Triunfo, 1722 – Campo Belo, São Paulo – SP, 04602-006
           </p>
