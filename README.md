@@ -1,36 +1,66 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Auto Confiança
 
-## Getting Started
+Catálogo de veículos seminovos e empreendimentos imobiliários da Auto Confiança.
 
-First, run the development server:
+## Tecnologias
+
+- Next.js 15 com App Router
+- React 19 e TypeScript
+- Tailwind CSS 4
+- Lucide React para ícones
+- Exportação estática para HTML
+
+## Como executar
+
+Instale as dependências:
+
+```bash
+npm install
+```
+
+Inicie o servidor de desenvolvimento:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+A aplicação ficará disponível em [http://localhost:3001](http://localhost:3001).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Build e publicação
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Gere a versão estática:
 
-## Learn More
+```bash
+npm run build
+```
 
-To learn more about Next.js, take a look at the following resources:
+O resultado será criado na pasta `out/`. Para servir essa pasta localmente:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run serve
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Rotas principais
 
-## Deploy on Vercel
+- `/` - página inicial
+- `/veiculos` - catálogo com busca e filtros
+- `/veiculos/[codVeiculo]` - detalhe de um veículo
+- `/imoveis` - catálogo de empreendimentos
+- `/imoveis/[codImovel]` - detalhe de um empreendimento
+- `/triu1722` - apresentação especial do TRIU 1722
+- `/quaddra-lorena` - apresentação especial do Quaddra Lorena
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Dados e imagens
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Veículos: `data/veiculos.json`
+- Imóveis: `data/imoveis.json`
+- Imagens: `public/img/`
+
+Os catálogos e páginas de detalhe usam dados locais dos arquivos JSON. Para adicionar ou atualizar itens, altere o JSON correspondente e inclua as imagens relacionadas em `public/img/`.
+
+## Scripts
+
+- `npm run dev` - inicia o desenvolvimento na porta 3001
+- `npm run build` - gera a exportação estática
+- `npm run start` - inicia o servidor Next em produção
+- `npm run serve` - serve a pasta `out/` na porta 3000
