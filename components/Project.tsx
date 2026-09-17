@@ -26,7 +26,7 @@ export default function Location() {
                 {/* imagem única do prédio */}
                 <div className="relative mt-12 flex justify-center">
                     <Image
-                        src="/img/empreendimento/02.jpg"
+                        src="/img/triu1722/02.jpg"
                         alt="Fachada do Triu 1722"
                         width={500}
                         height={1080}

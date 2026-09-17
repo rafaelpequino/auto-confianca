@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import veiculosData from '@/data/veiculos.json';
+import veiculosData from '@/data/veiculo.json';
 import VeiculoDetalheClient from './VeiculoDetalheClient';
 
 interface Veiculo {

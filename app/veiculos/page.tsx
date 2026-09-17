@@ -14,7 +14,7 @@ import {
   Settings2,
   SlidersHorizontal,
 } from 'lucide-react';
-import veiculosData from '@/data/veiculos.json';
+import veiculosData from '@/data/veiculo.json';
 
 interface Veiculo {
   codVeiculo: string;
@@ -106,7 +106,7 @@ export default function VeiculosPage() {
       </section>
 
       <section className="mx-auto max-w-[1440px] px-6 py-8 sm:px-10 sm:py-12 lg:px-16">
-        <div className="relative z-10 rounded-[1.75rem] border border-[#172536]/10 bg-[#fffdf9] p-5 shadow-[0_20px_50px_rgba(23,37,54,0.08)] sm:p-7">
+        {veiculos.length > 0 && <div className="relative z-10 rounded-[1.75rem] border border-[#172536]/10 bg-[#fffdf9] p-5 shadow-[0_20px_50px_rgba(23,37,54,0.08)] sm:p-7">
           <div className="flex flex-col gap-5 lg:flex-row lg:items-end">
             <div className="flex-1">
               <label htmlFor="busca-veiculos" className="mb-2 block text-xs font-bold uppercase tracking-[0.18em] text-[#172536]">Qual carro você procura?</label>
@@ -138,7 +138,7 @@ export default function VeiculosPage() {
             <p className="flex items-center gap-2 text-sm text-[#58687a]"><SlidersHorizontal className="h-4 w-4 text-[#e76f51]" strokeWidth={1.8} /><strong className="text-[#172536]">{veiculosFiltrados.length}</strong> {veiculosFiltrados.length === 1 ? 'veículo encontrado' : 'veículos encontrados'}</p>
             {possuiFiltros && <button type="button" onClick={limparFiltros} className="inline-flex items-center gap-2 self-start text-xs font-bold uppercase tracking-[0.14em] text-[#e76f51] transition-colors hover:text-[#c94d32] sm:self-auto"><CircleX className="h-4 w-4" strokeWidth={1.8} />Limpar filtros</button>}
           </div>
-        </div>
+        </div>}
 
         <div className="mb-6 mt-12 flex items-end justify-between gap-4">
           <div><p className="mb-2 text-[10px] font-bold uppercase tracking-[0.25em] text-[#d8a84e]">Escolha com confiança</p><h2 className="text-2xl font-bold tracking-[-0.05em] sm:text-3xl">Veículos em destaque</h2></div>
@@ -171,9 +171,7 @@ export default function VeiculosPage() {
         ) : (
           <div className="rounded-[1.5rem] border border-dashed border-[#172536]/20 bg-[#fffdf9] px-6 py-16 text-center">
             <CarFront className="mx-auto h-10 w-10 text-[#718095]" strokeWidth={1.3} />
-            <h2 className="mt-4 text-xl font-bold tracking-[-0.04em]">Nenhum veículo encontrado</h2>
-            <p className="mx-auto mt-2 max-w-md text-sm leading-relaxed text-[#58687a]">Tente buscar por outra marca ou ajustar a faixa de preço para encontrar novas opções.</p>
-            <button type="button" onClick={limparFiltros} className="mt-6 inline-flex items-center gap-2 rounded-full bg-[#172536] px-5 py-3 text-xs font-bold uppercase tracking-[0.12em] text-[#f6f1e8] transition-colors hover:bg-[#e76f51]"><Check className="h-4 w-4" />Ver todos os veículos</button>
+            <h2 className="mt-4 text-xl font-bold tracking-[-0.04em]">Nenhum veículo disponível no momento</h2>
           </div>
         )}
       </section>

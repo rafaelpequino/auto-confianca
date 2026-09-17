@@ -13,17 +13,17 @@ const SPOTS: Spot[] = [
   {
     title: 'Shopping Ibirapuera',
     info: 'Carro • 1,3km • 4min',
-    img: '/img/locais/shopping.jpg',
+    img: '/img/triu1722/locais/shopping.jpg',
   },
   {
     title: 'Metrô Eucaliptos',
     info: 'Carro • 2,7km • 7min',
-    img: '/img/locais/eucaliptos.jpg',
+    img: '/img/triu1722/locais/eucaliptos.jpg',
   },
   {
     title: 'Aeroporto de Congonhas',
     info: 'A pé • 1km • 12min',
-    img: '/img/locais/congonhas.jpg',
+    img: '/img/triu1722/locais/congonhas.jpg',
   },
 ]
 
@@ -64,7 +64,7 @@ export default function Location() {
         {/* imagem panorâmica */}
         <div className="relative w-full overflow-hidden rounded-none">
           <Image
-            src="/img/empreendimento/03.jpg"
+            src="/img/triu1722/03.jpg"
             alt="Panorâmica de Campo Belo com pontos de referência"
             width={1920}
             height={820}

@@ -10,7 +10,7 @@ export const Welcome = () => {
       <div
         className="absolute inset-0 bg-center bg-cover"
         style={{
-          backgroundImage: "url(/img/empreendimento/01.jpg)",
+          backgroundImage: "url(/img/triu1722/01.jpg)",
         }}
       />
       {/* Overlay gradient for readability */}

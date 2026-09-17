@@ -8,17 +8,17 @@
     "descricaoCurta": "2 Suítes | 69 M² com Espaço Gourmet",
     "descricaoCompleta": "Entre o charme da tradição e a energia da modernidade, o Triu 1722 se destaca como um ícone de exclusividade",
     "fotosPrincipais": [
-      "/img/empreendimento/01.jpg",
-      "/img/empreendimento/02.jpg",
-      "/img/empreendimento/03.jpg",
-      "/img/empreendimento/05.jpg",
-      "/img/empreendimento/06.jpg"
+      "/img/triu1722/01.jpg",
+      "/img/triu1722/02.jpg",
+      "/img/triu1722/03.jpg",
+      "/img/triu1722/05.jpg",
+      "/img/triu1722/06.jpg"
     ],
     "apartamentos": [
       {
         "titulo": "2 suítes | 69 m²",
         "subtitulo": "com terraço gourmet",
-        "imagemPlanta": "/img/empreendimento/planta01.jpg",
+        "imagemPlanta": "/img/triu1722/planta01.jpg",
         "detalhes": [
           { "n": 1, "label": "2 suítes" },
           { "n": 2, "label": "Lavabo" },
@@ -30,7 +30,7 @@
       {
         "titulo": "2 suítes | 69 m²",
         "subtitulo": "com sala integrada e terraço gourmet",
-        "imagemPlanta": "/img/empreendimento/planta02.jpg",
+        "imagemPlanta": "/img/triu1722/planta02.jpg",
         "detalhes": [
           { "n": 1, "label": "2 suítes" },
           { "n": 2, "label": "Lavabo" },
@@ -42,7 +42,7 @@
     ],
     "areasComuns": [
       {
-        "imagemPlanta": "/img/empreendimento/05.jpg",
+        "imagemPlanta": "/img/triu1722/05.jpg",
         "detalhes": [
           { "n": 1, "label": "Guarita blindada" },
           { "n": 2, "label": "Espaço delivery" },
@@ -57,7 +57,7 @@
         ]
       },
       {
-        "imagemPlanta": "/img/empreendimento/06.jpg",
+        "imagemPlanta": "/img/triu1722/06.jpg",
         "detalhes": [
           { "n": 1, "label": "Solarium" },
           { "n": 2, "label": "Piscina Climatizada" },
@@ -104,17 +104,17 @@
       {
         "titulo": "Shopping Ibirapuera",
         "info": "Carro • 1,3km • 4min",
-        "img": "/img/locais/shopping.jpg"
+        "img": "/img/triu1722/locais/shopping.jpg"
       },
       {
         "titulo": "Metrô Eucaliptos",
         "info": "Carro • 2,7km • 7min",
-        "img": "/img/locais/eucaliptos.jpg"
+        "img": "/img/triu1722/locais/eucaliptos.jpg"
       },
       {
         "titulo": "Aeroporto de Congonhas",
         "info": "A pé • 1km • 12min",
-        "img": "/img/locais/congonhas.jpg"
+        "img": "/img/triu1722/locais/congonhas.jpg"
       }
     ]
   },
@@ -238,6 +238,34 @@
         "info": "A pé • 900m • 11min",
         "img": "/img/quaddra-lorena/locais/metro.jpg"
       }
+    ]
+  },
+  {
+    "codImovel": "terreno-cabreuva",
+    "nome": "TERRENO EM CABREÚVA",
+    "localizacao": "Via dos Ipês - Região Metropolitana de Jundiaí - Cabreúva - SP, 13315-000",
+    "endereco": "Via dos Ipês, s/n – O melhor terreno da região",
+    "telefone": "11947479403",
+    "descricaoCurta": "Terreno a venda em Cabreúva",
+    "descricaoCompleta": null,
+    "fotosPrincipais": [
+      "/img/terreno-cabreuva/01.png",
+      "/img/terreno-cabreuva/02.jpeg",
+      "/img/terreno-cabreuva/03.jpeg",
+      "/img/terreno-cabreuva/04.png",
+      "/img/terreno-cabreuva/05.png",
+      "/img/terreno-cabreuva/06.png",
+      "/img/terreno-cabreuva/07.png",
+      "/img/terreno-cabreuva/08.png"
+    ],
+    "apartamentos": [
+    ],
+    "areasComuns": [
+    ],
+    "diferenciais": [
+    ],
+    "videoUrl": null,
+    "localidades": [
     ]
   }
 ]

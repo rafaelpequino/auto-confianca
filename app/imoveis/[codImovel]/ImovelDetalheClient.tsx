@@ -34,7 +34,7 @@ interface Imovel {
   apartamentos: Apartamento[];
   areasComuns: AreaComum[];
   diferenciais: Diferencial[];
-  videoUrl: string;
+  videoUrl: string | null;
   localidades: Localidade[];
 }
 
@@ -47,6 +47,8 @@ export default function ImovelDetalheClient({ imovel }: { imovel: Imovel }) {
   const proxima = () => setFotoAtual((foto) => (foto === imovel.fotosPrincipais.length - 1 ? 0 : foto + 1));
   const contatoUrl = `https://wa.me/55${imovel.telefone}?text=${encodeURIComponent(`Olá! Vi o ${imovel.nome} no site e gostaria de mais informações.`)}`;
   const isQuaddra = imovel.codImovel === 'quaddra-lorena';
+  const hasLocalizacao = imovel.localidades.length > 0;
+  const hasPlantasOuDiferenciais = imovel.apartamentos.length > 0 || imovel.diferenciais.length > 0;
 
   useEffect(() => {
     if (!selectedImage) return;
@@ -92,15 +94,15 @@ export default function ImovelDetalheClient({ imovel }: { imovel: Imovel }) {
             <div className="mt-4 grid grid-cols-4 gap-3 sm:grid-cols-5">
               {imoveisFotos(imovel).map((foto, index) => <button key={foto} type="button" onClick={() => setFotoAtual(index)} aria-label={`Ver foto ${index + 1}`} className={`relative aspect-[4/3] cursor-pointer overflow-hidden rounded-xl border-2 transition-all ${fotoAtual === index ? 'border-[#e76f51] opacity-100' : 'border-transparent opacity-60 hover:opacity-100'}`}><Image src={foto} alt="" fill sizes="(max-width: 640px) 25vw, 15vw" className="object-cover" /></button>)}
             </div>
-            <div className="mt-10 border-t border-[#172536]/10 pt-8"><p className="mb-2 text-[10px] font-bold uppercase tracking-[0.25em] text-[#d8a84e]">Sobre o empreendimento</p><h2 className="text-2xl font-bold tracking-[-0.05em] sm:text-3xl">Um endereço para viver o seu próximo capítulo</h2><p className="mt-4 max-w-3xl text-sm leading-relaxed text-[#58687a] sm:text-base">{imovel.descricaoCompleta}</p></div>
+            {imovel.descricaoCompleta && <div className="mt-10 border-t border-[#172536]/10 pt-8"><p className="mb-2 text-[10px] font-bold uppercase tracking-[0.25em] text-[#d8a84e]">Sobre o empreendimento</p><h2 className="text-2xl font-bold tracking-[-0.05em] sm:text-3xl">Um endereço para viver o seu próximo capítulo</h2><p className="mt-4 max-w-3xl text-sm leading-relaxed text-[#58687a] sm:text-base">{imovel.descricaoCompleta}</p></div>}
           </div>
 
           <aside className="lg:sticky lg:top-6">
             <div className="rounded-[1.75rem] bg-[#172536] p-6 text-[#f6f1e8] shadow-[0_22px_50px_rgba(23,37,54,0.16)] sm:p-8">
               <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#e76f51]">{isQuaddra ? 'Alto padrão nos Jardins' : 'Exclusividade no Campo Belo'}</p>
               <h1 className="mt-2 text-4xl font-bold leading-none tracking-[-0.06em] sm:text-5xl">{imovel.nome}</h1>
-              <p className="mt-5 flex items-start gap-2 text-xs leading-relaxed text-[#f6f1e8]/65"><MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[#d8a84e]" strokeWidth={1.8} />{imovel.localizacao}</p>
-              <p className="mt-7 border-y border-[#f6f1e8]/15 py-6 text-lg font-semibold leading-relaxed text-[#f6f1e8]">{imovel.descricaoCurta}</p>
+              {imovel.localizacao && <p className="mt-5 flex items-start gap-2 text-xs leading-relaxed text-[#f6f1e8]/65"><MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[#d8a84e]" strokeWidth={1.8} />{imovel.localizacao}</p>}
+              {imovel.descricaoCurta && <p className="mt-7 border-y border-[#f6f1e8]/15 py-6 text-lg font-semibold leading-relaxed text-[#f6f1e8]">{imovel.descricaoCurta}</p>}
               <div className="mt-6 space-y-3 text-sm text-[#f6f1e8]/75"><p className="flex items-start gap-2"><Check className="mt-0.5 h-4 w-4 shrink-0 text-[#41a875]" />{isQuaddra ? 'Apenas 56 unidades exclusivas' : 'Plantas com terraço gourmet'}</p><p className="flex items-start gap-2"><Check className="mt-0.5 h-4 w-4 shrink-0 text-[#41a875]" />{isQuaddra ? 'Maior terreno do Jardins' : 'Rooftop e áreas de bem-estar'}</p></div>
               <a href={contatoUrl} target="_blank" rel="noopener noreferrer" className="mt-7 flex items-center justify-center gap-2 rounded-xl bg-[#41a875] px-5 py-4 text-sm font-bold text-white transition-colors hover:bg-[#348c60]"><MessageCircle className="h-5 w-5" />Tenho interesse</a>
               <p className="mt-4 flex items-start gap-2 text-xs leading-relaxed text-[#f6f1e8]/55"><CircleHelp className="mt-0.5 h-4 w-4 shrink-0 text-[#d8a84e]" />Fale com um consultor para conhecer disponibilidade e condições.</p>
@@ -109,23 +111,23 @@ export default function ImovelDetalheClient({ imovel }: { imovel: Imovel }) {
         </div>
       </section>
 
-      <section className="bg-[#eee5d8]">
+      {imovel.endereco && imovel.descricaoCompleta && <section className="bg-[#eee5d8]">
         <div className="mx-auto max-w-[1440px] px-6 py-16 sm:px-10 lg:px-16">
           <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.25em] text-[#d8a84e]">O projeto</p>
           <h2 className="max-w-3xl text-3xl font-bold tracking-[-0.06em] sm:text-5xl">{isQuaddra ? 'Um novo ícone de luxo no coração dos Jardins.' : 'Arquitetura contemporânea para uma rotina mais leve.'}</h2>
           <div className="mt-10 grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center"><Image src={imovel.fotosPrincipais[1]} alt={`Fachada do ${imovel.nome}`} width={900} height={1200} className="max-h-[620px] w-full object-cover" /><div><p className="max-w-xl text-base leading-relaxed text-[#58687a]">{imovel.descricaoCompleta}</p><p className="mt-6 flex items-start gap-2 text-sm font-semibold leading-relaxed text-[#172536]"><MapPin className="mt-0.5 h-5 w-5 shrink-0 text-[#e76f51]" />{imovel.endereco}</p></div></div>
         </div>
-      </section>
+      </section>}
 
-      <section className="bg-[#f6f1e8]">
+      {hasLocalizacao && <section className="bg-[#f6f1e8]">
         <div className="mx-auto max-w-[1440px] px-6 py-16 sm:px-10 lg:px-16">
           <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end"><div><p className="mb-2 text-[10px] font-bold uppercase tracking-[0.25em] text-[#d8a84e]">Localização</p><h2 className="text-3xl font-bold tracking-[-0.06em] sm:text-4xl">Tudo o que você precisa por perto.</h2></div><p className="max-w-sm text-sm leading-relaxed text-[#58687a]">{imovel.localizacao}</p></div>
           <div className="mt-8 grid gap-5 md:grid-cols-3">{imovel.localidades.map((local, index) => <article key={local.titulo} className={`overflow-hidden rounded-[1.5rem] border bg-[#fffdf9] transition-all ${localAtual === index ? 'border-[#e76f51] shadow-[0_15px_35px_rgba(23,37,54,0.1)]' : 'border-[#172536]/10'}`}><button type="button" onClick={() => setLocalAtual(index)} className="group block w-full cursor-pointer text-left"><div className="relative aspect-[4/3] overflow-hidden"><Image src={local.img} alt={local.titulo} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover transition-transform duration-500 group-hover:scale-105" /></div><div className="p-5"><h3 className="font-bold text-[#172536]">{local.titulo}</h3><p className="mt-1 text-xs text-[#58687a]">{local.info}</p></div></button></article>)}</div>
           <div className="mt-5 flex gap-2 md:hidden"><button type="button" onClick={() => setLocalAtual((localAtual + imovel.localidades.length - 1) % imovel.localidades.length)} aria-label="Localização anterior" className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-[#172536]/15 bg-[#fffdf9]"><ChevronLeft className="h-4 w-4" /></button><button type="button" onClick={() => setLocalAtual((localAtual + 1) % imovel.localidades.length)} aria-label="Próxima localização" className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-[#172536]/15 bg-[#fffdf9]"><ChevronRight className="h-4 w-4" /></button></div>
         </div>
-      </section>
+      </section>}
 
-      <section className="bg-[#172536] text-[#f6f1e8]"><div className="mx-auto max-w-[1440px] px-6 py-16 sm:px-10 lg:px-16"><p className="mb-2 text-[10px] font-bold uppercase tracking-[0.25em] text-[#d8a84e]">Plantas e diferenciais</p><h2 className="text-3xl font-bold tracking-[-0.06em] sm:text-4xl">Pensado para o seu jeito de viver.</h2><div className="mt-10 space-y-12">{imovel.apartamentos.map((apartamento, index) => <div key={apartamento.titulo} className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-center"><button type="button" onClick={() => setSelectedImage(apartamento.imagemPlanta)} className={`group relative block w-full cursor-pointer overflow-hidden rounded-[1.5rem] border border-[#f6f1e8]/10 ${index % 2 ? 'lg:order-2' : ''}`} aria-label={`Ampliar planta ${apartamento.titulo}`}><Image src={apartamento.imagemPlanta} alt={`Planta ${apartamento.titulo}`} width={1600} height={1100} className="h-auto w-full bg-[#fffdf9] object-contain transition-transform duration-500 group-hover:scale-[1.02]" /></button><div className={index % 2 ? 'lg:order-1' : ''}><h3 className="text-2xl font-bold">{apartamento.titulo}</h3><p className="mt-3 text-sm leading-relaxed text-[#f6f1e8]/65">{apartamento.subtitulo}</p><ol className="mt-6 space-y-3">{apartamento.detalhes.map((detalhe) => <li key={detalhe.n} className="flex items-start gap-3 text-sm"><span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#e76f51] text-xs font-bold text-white">{detalhe.n}</span><span className="text-[#f6f1e8]/80">{detalhe.label}</span></li>)}</ol></div></div>)}</div><div className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">{imovel.diferenciais.map((diferencial) => <article key={diferencial.titulo} className="rounded-[1.25rem] border border-[#f6f1e8]/10 bg-[#f6f1e8]/[0.06] p-5"><h3 className="font-bold">{diferencial.titulo}</h3><p className="mt-2 text-sm leading-relaxed text-[#f6f1e8]/60">{diferencial.descricao}</p></article>)}</div></div></section>
+      {hasPlantasOuDiferenciais && <section className="bg-[#172536] text-[#f6f1e8]"><div className="mx-auto max-w-[1440px] px-6 py-16 sm:px-10 lg:px-16"><p className="mb-2 text-[10px] font-bold uppercase tracking-[0.25em] text-[#d8a84e]">Plantas e diferenciais</p><h2 className="text-3xl font-bold tracking-[-0.06em] sm:text-4xl">Pensado para o seu jeito de viver.</h2><div className="mt-10 space-y-12">{imovel.apartamentos.map((apartamento, index) => <div key={apartamento.titulo} className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-center"><button type="button" onClick={() => setSelectedImage(apartamento.imagemPlanta)} className={`group relative block w-full cursor-pointer overflow-hidden rounded-[1.5rem] border border-[#f6f1e8]/10 ${index % 2 ? 'lg:order-2' : ''}`} aria-label={`Ampliar planta ${apartamento.titulo}`}><Image src={apartamento.imagemPlanta} alt={`Planta ${apartamento.titulo}`} width={1600} height={1100} className="h-auto w-full bg-[#fffdf9] object-contain transition-transform duration-500 group-hover:scale-[1.02]" /></button><div className={index % 2 ? 'lg:order-1' : ''}><h3 className="text-2xl font-bold">{apartamento.titulo}</h3><p className="mt-3 text-sm leading-relaxed text-[#f6f1e8]/65">{apartamento.subtitulo}</p><ol className="mt-6 space-y-3">{apartamento.detalhes.map((detalhe) => <li key={detalhe.n} className="flex items-start gap-3 text-sm"><span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#e76f51] text-xs font-bold text-white">{detalhe.n}</span><span className="text-[#f6f1e8]/80">{detalhe.label}</span></li>)}</ol></div></div>)}</div><div className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">{imovel.diferenciais.map((diferencial) => <article key={diferencial.titulo} className="rounded-[1.25rem] border border-[#f6f1e8]/10 bg-[#f6f1e8]/[0.06] p-5"><h3 className="font-bold">{diferencial.titulo}</h3><p className="mt-2 text-sm leading-relaxed text-[#f6f1e8]/60">{diferencial.descricao}</p></article>)}</div></div></section>}
 
       {imovel.videoUrl && <section className="bg-[#eee5d8]"><div className="mx-auto max-w-[1440px] px-6 py-16 sm:px-10 lg:px-16"><div className="flex items-center gap-3"><Play className="h-5 w-5 text-[#e76f51]" fill="currentColor" /><p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#d8a84e]">Experiência em vídeo</p></div><h2 className="mt-3 text-3xl font-bold tracking-[-0.06em] sm:text-4xl">Conheça por dentro.</h2><div className="mt-8 overflow-hidden rounded-[1.5rem] bg-[#172536] p-2 shadow-[0_18px_40px_rgba(23,37,54,0.12)]"><div className="aspect-video"><iframe className="h-full w-full rounded-xl" src={imovel.videoUrl} title={`Vídeo do ${imovel.nome}`} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen loading="lazy" /></div></div></div></section>}
 

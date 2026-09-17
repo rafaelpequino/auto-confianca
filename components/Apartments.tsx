@@ -29,14 +29,14 @@ const PLAN_2: Detail[] = [
 
 const PLANS: ApartmentPlan[] = [
   {
-    imageSrc: '/img/empreendimento/planta01.jpg', // ajuste o caminho
+    imageSrc: '/img/triu1722/planta01.jpg', // ajuste o caminho
     imageAlt: 'Planta de 69m² com terraço gourmet',
     title: '2 suítes | 69 m²',
     subtitle: 'com terraço gourmet',
     items: PLAN_1,
   },
   {
-    imageSrc: '/img/empreendimento/planta02.jpg', // ajuste o caminho
+    imageSrc: '/img/triu1722/planta02.jpg', // ajuste o caminho
     imageAlt: 'Planta de 69m² com sala integrada e terraço gourmet',
     title: '2 suítes | 69 m²',
     subtitle: 'com sala integrada e terraço gourmet',

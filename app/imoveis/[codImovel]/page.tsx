@@ -13,7 +13,7 @@ interface Imovel {
   apartamentos: any[];
   areasComuns: any[];
   diferenciais: any[];
-  videoUrl: string;
+  videoUrl: string | null;
   localidades: any[];
 }
 

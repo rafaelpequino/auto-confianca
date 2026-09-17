@@ -35,12 +35,12 @@ const AMENITIES_2: Amenity[] = [
 
 const PLANS: Plan[] = [
     {
-        imageSrc: '/img/empreendimento/05.jpg', // ajuste o caminho
+        imageSrc: '/img/triu1722/05.jpg', // ajuste o caminho
         imageAlt: 'Planta das áreas comuns com numeração de ambientes',
         items: AMENITIES_1,
     },
     {
-        imageSrc: '/img/empreendimento/06.jpg', // ajuste o caminho da segunda planta
+        imageSrc: '/img/triu1722/06.jpg', // ajuste o caminho da segunda planta
         imageAlt: 'Planta complementar das áreas comuns com numeração de ambientes',
         items: AMENITIES_2,
     },
