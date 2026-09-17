@@ -19,10 +19,14 @@ interface Veiculo {
   fotos: string[];
 }
 
+const veiculos = veiculosData as Veiculo[];
+
+export const dynamicParams = false;
+
 export function generateStaticParams() {
-  return veiculosData.map((veiculo) => ({
-    codVeiculo: veiculo.codVeiculo,
-  }));
+  return veiculos.length > 0
+    ? veiculos.map((veiculo) => ({ codVeiculo: veiculo.codVeiculo }))
+    : [{ codVeiculo: '__indisponivel__' }];
 }
 
 export default async function VeiculoDetalhePage({
@@ -31,7 +35,7 @@ export default async function VeiculoDetalhePage({
   params: Promise<{ codVeiculo: string }>;
 }) {
   const { codVeiculo } = await params;
-  const veiculo = veiculosData.find(
+  const veiculo = veiculos.find(
     (v) => v.codVeiculo === codVeiculo
   ) as Veiculo | undefined;
 
